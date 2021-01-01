@@ -1,11 +1,16 @@
 // Bubble sorting
 const array_sorting = (arr) => {
+  let l = 0;
   for (let i = 0; i < arr.length; i++) {
-    for (let k = arr.length - 1; k > i; k--) {
-      if (arr[i] > arr[k]) {
-        let curr_pos = arr[k];
-        arr[k] = arr[i];
-        arr[i] = curr_pos;
+    if (l !== 12) {
+      // most efficient to include breakpoint...finished sorting after 1 iteration of outer loop
+      for (let k = arr.length - 1; k > i; k--) {
+        if (arr[i] > arr[k]) {
+          l++;
+          let curr_pos = arr[k];
+          arr[k] = arr[i];
+          arr[i] = curr_pos;
+        }
       }
     }
   }
@@ -16,6 +21,7 @@ const array_sorting = (arr) => {
 function getCoordinates() {
   const promise = new Promise((resolve, reject) => {
     window.navigator.geolocation.getCurrentPosition(
+      // need browser/index.html to run
       (succ) => {
         succ ? resolve(succ) : null;
       },
