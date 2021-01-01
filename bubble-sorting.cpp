@@ -20,6 +20,7 @@ int main()
 {
     std::vector<double> unsorted_vec{45, -5, 65, 87, 5.4, 23, 2, 1, 14, 14, 5};
     std::vector<double> sorted_vec{sort(unsorted_vec)};
+
     std::cout << "[ ";
     for (auto num : sorted_vec)
         if (sorted_vec[sorted_vec.size() - 1] == num)
